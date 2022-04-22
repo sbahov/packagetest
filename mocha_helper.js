@@ -20,7 +20,6 @@ function getTestPaths (dir, fileList) {
 }
 
 const runMochaTestsByTag = (tag) => {
-
   const mochaOptions = {
     timeout: 200000,
     fgrep: tag,
@@ -31,7 +30,7 @@ const runMochaTestsByTag = (tag) => {
   };
   const mocha = new Mocha(mochaOptions);
 
-  getTestPaths('./test').forEach(function (file) {
+  getTestPaths(__dirname + '/test').forEach(function (file) {
     mocha.addFile(
       path.join(file)
     );
